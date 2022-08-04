@@ -1,0 +1,9 @@
+jupyter
+ipywidgets
+jupyterlab
+opencv-python
+numpy
+scipy
+matplotlib
+scikit-image
+tensorlayer==1.11.0

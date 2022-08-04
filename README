@@ -1,0 +1,16 @@
+
+git clone https://github.com/alex04072000/SingleHDR.git
+
+docker-compose -f "docker-compose.yaml" up -d --build 
+
+## To use the project with our own images and trained weights
+
+#download trained weights and put the folders in the same folder as test_real.py
+https://drive.google.com/file/d/1e9vP8YPEjGcvXCa0Bfqwxw7qks7dH-VE/view
+
+#use the project
+CUDA_VISIBLEDEVICES=0 python3 test_real.py --ckpt_path_deq ckpt_deq/model.ckpt --ckpt_path_lin ckpt_lin/model.ckpt --ckpt_path_hal ckpt_hal/model.ckpt --test_imgs ./imgs --output_path output_hdrs
+
+## Citation
+[1] Yu-Lun Liu, Wei-Sheng Lai, Yu-Sheng Chen, Yi-Lung Kao, Ming-Hsuan Yang, Yung-Yu Chuang, and Jia-Bin Huang. Single-Image HDR Reconstruction by Learning to Reverse the Camera Pipeline. Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020
+[2] Gabriel Eilertsen, Joel Kronander, Gyorgy Denes, Rafa\l Mantiuk, and Jonas Unger. HDR image reconstruction from a single exposure using deep CNNs. ACM Transactions on Graphics (TOG), 2017

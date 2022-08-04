@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  rescuer_hdr:
+    image: rescuer_hdr
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rescuer_hdr
+    volumes:
+      - ./SingleHDR:/workdir
+    ports:
+      - 8888:8888
